@@ -30,7 +30,8 @@ steps:
     publishLocation: 'Container'
     StoreAsTar: true
     - task: CopyFiles@2
-      gdirectory)'
+      inputs:
+        SourceFolder: '$(system.defaultworkingdirectory)'
         Contents: '**/*.war'
         TargetFolder: '$(build.artifactstagingdirectory)'
         - task: PublishBuildArtifacts@1
